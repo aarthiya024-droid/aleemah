@@ -1,0 +1,75 @@
+function saveProfile(profile) {
+    localStorage.setItem(
+        "internMatchProfile",
+        JSON.stringify(profile)
+    );
+}
+
+function getProfile() {
+
+    const data =
+        localStorage.getItem("internMatchProfile");
+
+    if (!data) {
+        return null;
+    }
+
+    try {
+        return JSON.parse(data);
+    } catch {
+        return null;
+    }
+}
+
+function getSavedInternships() {
+
+    const data =
+        localStorage.getItem("savedInternships");
+
+    if (!data) {
+        return [];
+    }
+
+    try {
+        return JSON.parse(data);
+    } catch {
+        return [];
+    }
+}
+
+function saveInternship(id) {
+
+    const saved =
+        getSavedInternships();
+
+    if (!saved.includes(id)) {
+
+        saved.push(id);
+
+        localStorage.setItem(
+            "savedInternships",
+            JSON.stringify(saved)
+        );
+    }
+}
+
+function removeInternship(id) {
+
+    let saved =
+        getSavedInternships();
+
+    saved = saved.filter(
+        item => item !== id
+    );
+
+    localStorage.setItem(
+        "savedInternships",
+        JSON.stringify(saved)
+    );
+}
+
+function isInternshipSaved(id) {
+
+    return getSavedInternships()
+        .includes(id);
+}
