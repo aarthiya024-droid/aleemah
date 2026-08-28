@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Internships - InternMatch</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Intern<span>Match</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="profile.html">My Profile</a>
+
+        <a href="internships.html" class="active">
+            Internships
+        </a>
+
+        <a href="saved.html">
+            Saved
+        </a>
+
+        <a href="skill-gap.html">
+            Skill Gap
+        </a>
+
+    </nav>
+
+</header>
+
+<main class="container">
+
+    <div class="page-header">
+
+        <h1>Recommended Internships</h1>
+
+        <p>
+            Internships ranked according to your profile.
+        </p>
+
+    </div>
+
+    <div class="dashboard-stats">
+
+        <div class="dashboard-stat">
+            <strong id="totalInternships">0</strong>
+            <span>Internships</span>
+        </div>
+
+        <div class="dashboard-stat">
+            <strong id="strongMatches">0</strong>
+            <span>Strong Matches</span>
+        </div>
+
+        <div class="dashboard-stat">
+            <strong id="savedCount">0</strong>
+            <span>Saved</span>
+        </div>
+
+        <div class="dashboard-stat">
+            <strong id="averageScore">0%</strong>
+            <span>Average Match</span>
+        </div>
+
+    </div>
+
+    <div class="search-filter">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search internships, companies or skills..."
+        >
+
+        <select id="domainFilter">
+            <option value="all">All Domains</option>
+            <option>Web Development</option>
+            <option>Software Development</option>
+            <option>Data Science</option>
+            <option>Artificial Intelligence</option>
+            <option>Machine Learning</option>
+            <option>Cybersecurity</option>
+            <option>Cloud Computing</option>
+            <option>DevOps</option>
+            <option>Mobile Development</option>
+            <option>UI/UX</option>
+        </select>
+
+        <select id="locationFilter">
+
+            <option value="all">
+                All Locations
+            </option>
+
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+            <option>Mumbai</option>
+            <option>Delhi</option>
+            <option>Remote</option>
+
+        </select>
+
+        <select id="modeFilter">
+
+            <option value="all">
+                All Work Modes
+            </option>
+
+            <option>Remote</option>
+            <option>Hybrid</option>
+            <option>On-site</option>
+
+        </select>
+
+        <select id="scoreFilter">
+
+            <option value="all">
+                All Scores
+            </option>
+
+            <option value="80">
+                80%+
+            </option>
+
+            <option value="60">
+                60%+
+            </option>
+
+            <option value="40">
+                40%+
+            </option>
+
+        </select>
+
+        <select id="sortFilter">
+
+            <option value="best">
+                Best Match
+            </option>
+
+            <option value="lowest">
+                Lowest Match
+            </option>
+
+            <option value="stipend">
+                Highest Stipend
+            </option>
+
+        </select>
+
+    </div>
+
+    <div id="profileWarning" class="warning"></div>
+
+    <div id="internshipContainer" class="internship-grid">
+
+    </div>
+
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/matcher.js"></script>
+<script src="js/internships.js"></script>
+
+</body>
+</html>
